@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sasano <sasano@student.42.fr>              +#+  +:+       +#+        */
+/*   By: sasano <shunkotkg0141@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 08:30:17 by sasano            #+#    #+#             */
-/*   Updated: 2025/06/05 14:20:18 by sasano           ###   ########.fr       */
+/*   Updated: 2025/06/05 15:33:45 by sasano           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,10 @@ int main(int argc, char **argv)
     }
     while (std::getline(inFile, line)) {
         std::string replaced = customReplace(line, s1, s2);
-        outFile << replaced << std::endl;
+        outFile << replaced;
+        if (!inFile.eof()) {
+            outFile << std::endl; // Add newline except for the last line
+        }
     }
 
     inFile.close();
