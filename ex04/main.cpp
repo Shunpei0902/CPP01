@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sasano <shunkotkg0141@gmail.com>           +#+  +:+       +#+        */
+/*   By: sasano <sasano@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 08:30:17 by sasano            #+#    #+#             */
-/*   Updated: 2025/06/05 13:43:08 by sasano           ###   ########.fr       */
+/*   Updated: 2025/06/05 14:20:18 by sasano           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,12 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    std::ifstream inFile(filename);
+    std::ifstream inFile(filename.c_str());
     if (!inFile.is_open()) {
         std::cerr << "Error: could not open input file '" << filename << "'." << std::endl;
         return 1;
     }
-    std::ofstream outFile(filename + ".replace");
+    std::ofstream outFile((filename + ".replace").c_str());
     if (!outFile.is_open()) {
         inFile.close();
         std::cerr << "Error: could not open output file '" << filename << ".replace'." << std::endl;
