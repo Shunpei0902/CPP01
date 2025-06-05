@@ -6,7 +6,7 @@
 /*   By: sasano <shunkotkg0141@gmail.com>           +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/29 06:03:29 by sasano            #+#    #+#             */
-/*   Updated: 2024/12/29 06:56:07 by sasano           ###   ########.fr       */
+/*   Updated: 2025/06/05 13:35:41 by sasano           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,14 +48,11 @@ int main()
     Zombie* zombie;
     std::string name;
     int n ;
-
-    while (1)
-    {
-        n = getNumber();
-        name = getName();
-        zombie = zombieHorde(n, name);
-        for (int i = 0; i < n; i++)
-            zombie[i].announce();
-        delete[] zombie;
-    }
+    n = getNumber();
+    name = getName();
+    zombie = zombieHorde(n, name);
+    for (int i = 0; i < n; i++)
+        zombie[i].announce();
+    delete[] zombie;
+    return 0;
 }

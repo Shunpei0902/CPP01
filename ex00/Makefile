@@ -4,18 +4,18 @@ INCS = $(shell find $(INC_DIR) -type f -name "*.hpp")
 SRC_DIR = ./src/
 OBJ_DIR = ./obj/
 INC_DIR = ./includes/
-CC = c++
+CXX = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -fsanitize=address -fno-omit-frame-pointer -g -O1
 NAME = zombie
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(INCS)
-	$(CC) $(FLAGS) $(OBJS) -I $(INC_DIR) -o $(NAME)
+	$(CXX) $(FLAGS) $(OBJS) -I $(INC_DIR) -o $(NAME)
 
 $(OBJ_DIR)%.o: $(SRC_DIR)%.cpp $(INCS)
 	@mkdir -p $(OBJ_DIR)
-	$(CC) $(FLAGS) -I $(INC_DIR) -c $< -o $@
+	$(CXX) $(FLAGS) -I $(INC_DIR) -c $< -o $@
 
 clean:
 	rm -f $(OBJS)
